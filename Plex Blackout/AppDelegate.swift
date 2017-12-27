@@ -43,7 +43,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         let app = notification.userInfo?[NSWorkspace.applicationUserInfoKey] as? NSRunningApplication;
         let appId = app?.bundleIdentifier;
         if (appId == plexApp) {
-            sleep(1)
+            usleep(500000);
             plexLaunched();
             activateApp(app: app!);
         }
@@ -104,6 +104,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             win.isReleasedWhenClosed = false;
             
             win.toggleFullScreen(self);
+            
+            usleep(500000);
             NSApp.presentationOptions = [.autoHideDock, .autoHideMenuBar]
         }
     }
