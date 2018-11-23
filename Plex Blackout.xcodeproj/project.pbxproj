@@ -7,12 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9C493D6221A88DB50059246C /* BlackScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9C493D6121A88DB50059246C /* BlackScreen.xib */; };
 		9C80675D1FEE78EE0071CB89 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C80675C1FEE78EE0071CB89 /* AppDelegate.swift */; };
 		9C80675F1FEE78EE0071CB89 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9C80675E1FEE78EE0071CB89 /* Assets.xcassets */; };
 		9C8067621FEE78EE0071CB89 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9C8067601FEE78EE0071CB89 /* MainMenu.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		9C493D6121A88DB50059246C /* BlackScreen.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BlackScreen.xib; sourceTree = "<group>"; };
 		9C8067591FEE78EE0071CB89 /* Plex Blackout.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Plex Blackout.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9C80675C1FEE78EE0071CB89 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9C80675E1FEE78EE0071CB89 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -54,6 +56,7 @@
 				9C80675C1FEE78EE0071CB89 /* AppDelegate.swift */,
 				9C80675E1FEE78EE0071CB89 /* Assets.xcassets */,
 				9C8067601FEE78EE0071CB89 /* MainMenu.xib */,
+				9C493D6121A88DB50059246C /* BlackScreen.xib */,
 				9C8067631FEE78EE0071CB89 /* Info.plist */,
 				9C8067641FEE78EE0071CB89 /* Plex_Blackout.entitlements */,
 			);
@@ -87,7 +90,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0920;
-				LastUpgradeCheck = 0920;
+				LastUpgradeCheck = 1010;
 				ORGANIZATIONNAME = "Eliott Robson";
 				TargetAttributes = {
 					9C8067581FEE78EE0071CB89 = {
@@ -121,6 +124,7 @@
 			files = (
 				9C80675F1FEE78EE0071CB89 /* Assets.xcassets in Resources */,
 				9C8067621FEE78EE0071CB89 /* MainMenu.xib in Resources */,
+				9C493D6221A88DB50059246C /* BlackScreen.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -163,6 +167,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -170,6 +175,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -220,6 +226,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -227,6 +234,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;

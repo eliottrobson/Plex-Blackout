@@ -43,7 +43,6 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         let app = notification.userInfo?[NSWorkspace.applicationUserInfoKey] as? NSRunningApplication;
         let appId = app?.bundleIdentifier;
         if (appId == plexApp) {
-            usleep(500000);
             plexLaunched();
             activateApp(app: app!);
         }
@@ -75,7 +74,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         
         let service = IOServiceGetMatchingService(kIOMasterPortDefault, IOServiceMatching("IODisplayConnect"));
         
-        IODisplayGetFloatParameter(service, 0, kIODisplayBrightnessKey as CFString!, &brightness);
+        IODisplayGetFloatParameter(service, 0, kIODisplayBrightnessKey as CFString, &brightness);
         IOObjectRelease(service);
         
         return brightness;
@@ -84,7 +83,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     private func setBrightness(brightness: Float) {
         let service = IOServiceGetMatchingService(kIOMasterPortDefault, IOServiceMatching("IODisplayConnect"))
         
-        IODisplaySetFloatParameter(service, 0, kIODisplayBrightnessKey as CFString!, brightness)
+        IODisplaySetFloatParameter(service, 0, kIODisplayBrightnessKey as CFString, brightness)
         IOObjectRelease(service)
     }
     
@@ -93,20 +92,18 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             self.overlayWindow?.close();
             self.overlayWindow = nil;
         }
-        
+                
         self.overlayWindow = NSWindow(contentRect: NSMakeRect(0, 0, self.screenWidth, self.screenHeight), styleMask: [.borderless], backing: .buffered, defer: false);
         
         if let win = self.overlayWindow {
             win.title = "Plex Blackout";
             win.backgroundColor = NSColor.black;
-            win.makeKeyAndOrderFront(nil);
-            win.level = .floating
+            win.level = NSWindow.Level.screenSaver - 1;
             win.isReleasedWhenClosed = false;
+            win.collectionBehavior = [.stationary, .ignoresCycle];
+            win.makeKeyAndOrderFront(nil);
             
-            win.toggleFullScreen(self);
-            
-            usleep(500000);
-            NSApp.presentationOptions = [.autoHideDock, .autoHideMenuBar]
+            NSCursor.hide();
         }
     }
     
@@ -116,7 +113,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             self.overlayWindow = nil;
         }
         
-        NSApp.presentationOptions = []
+        NSCursor.unhide();
     }
     
     private func activateApp(app: NSRunningApplication) {
